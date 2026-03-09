@@ -37,14 +37,6 @@ Landing page ini dirancang untuk **kecepatan loading maksimal**, **SEO-friendly*
 
 ---
 
-## 📌 Notes
-
-- Ganti placeholder informasi (alamat, nomor telepon, social links) dengan data asli.  
-- Optimalkan gambar agar cepat dimuat (format WebP atau AVIF direkomendasikan).  
-- Landing page **single-file** untuk kesederhanaan dan kecepatan.  
-
----
-
 ## 📞 Contact
 
 - **Facebook**: [PT. Rizakry Jaya Abadi](https://www.facebook.com/profile.php?id=61581975972392)  
