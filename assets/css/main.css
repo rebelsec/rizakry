@@ -107,31 +107,39 @@ h6 {
   font-family: var(--heading-font);
 }
 
-
 /*--------------------------------------------------------------
-# Global Header
+# Global Header (Optimized for Accessibility & Mobile)
 --------------------------------------------------------------*/
+:root {
+  --background-color: #ffffff;     /* background header */
+  --default-color: #1a1a1a;        /* teks menu */
+  --heading-color: #0d0d0d;        /* logo h1 */
+  --accent-color: #007bff;         /* tombol utama */
+  --contrast-color: #ffffff;       /* teks tombol */
+}
+
+/* Header Container */
 .header {
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+/* Logo */
 .header .logo {
   line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .header .logo img {
   max-height: 36px;
   margin-right: 8px;
-}
-
-.header .logo i {
-  font-size: 24px;
-  margin-right: 5px;
-  color: var(--accent-color);
 }
 
 .header .logo h1 {
@@ -142,43 +150,62 @@ h6 {
   color: var(--heading-color);
 }
 
+/* Buttons */
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
-  background: var(--accent-color);
-  padding: 8px 26px;
-  margin: 0;
+  background-color: var(--accent-color);
+  padding: 12px 26px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 50px;
   transition: 0.3s;
   display: grid;
   place-items: center;
   font-size: 15px;
+  text-decoration: none;
 }
 
+/* Hover & Focus */
 .header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
+.header .btn-getstarted:focus {
+  background-color: #0056b3; /* fallback untuk hover */
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
   color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
+/* Responsive Order */
 @media (max-width: 1200px) {
-  .header .logo {
-    order: 1;
-  }
-
-  .header .btn-getstarted {
-    order: 2;
-    margin: 0 15px 0 0;
-    padding: 8px 20px;
-  }
-
-  .header .navmenu {
-    order: 3;
-  }
+  .header .logo { order: 1; }
+  .header .btn-getstarted { order: 2; margin: 0 15px 0 0; padding: 12px 20px; }
+  .header .navmenu { order: 3; }
 }
 
+/* Sticky + Shadow */
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Nav Menu Links */
+.header .navmenu a {
+  color: var(--default-color);
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.header .navmenu a:hover,
+.header .navmenu a:focus {
+  color: var(--accent-color);
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Ensure all focusable elements have clear focus */
+.header a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
 /*--------------------------------------------------------------
